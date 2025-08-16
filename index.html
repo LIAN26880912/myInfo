@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>活動報名表單</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src = "script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>2025 夏日市集活動報名</h1>
+    </header>
+
+
+    <a href="https://www.w3schools.com/tags/tag_doctype.asp" target="_blank ">
+        <img src="https://hips.hearstapps.com/hmg-prod/images/mv5bztnmoge1zmqtyjzmyy00mdhklthkzjytnzkyzdyxnta5zte0xkeyxkfqcgdeqxvynjg2njqwmdqat-v1-sy739-cr0-0-1776-739-al-1557325382.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*"
+            height="150" alt="活動圖片" />
+    </a>
+
+    <main>
+        <form id="signupForm">
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">電子郵件：</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="password">密碼：</label>
+            <input type="password" id="password" name="password" required />
+
+            <label for="phone">電話：</label>
+            <input type="tel" id="phone" name="phone" required />
+
+            <label for="message">備註：</label>
+            <textarea id="message" name="message"></textarea>
+
+            <button type="submit">送出報名</button>
+        </form>
+
+        <div id="successMessage" class="hidden">✅ 感謝您的報名！</div>
+
+        <form>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> I have a bike</label><br>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+            <label for="vehicle2"> I have a car</label><br>
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" checked>
+            <label for="vehicle3"> I have a boat</label>
+        </form>
+
+
+        <p>Hello CSS!</p>
+        <p style="color: red">Hello CSS!</p>
+        <p class="highlight">Hello CSS!</p>
+        <div class="highlight highlight-div">Hello CSS!</div>
+
+        <div class="highlight highlight-div">
+            <p>行內元素</p>
+            <p>行內元素</p>
+            <p>行內元素</p>
+        </div>
+
+        <hr />
+
+        <p id="myText" class="highlight">Hello CSS!</p>
+
+
+        <h1>CSS Box Model 範例</h1>
+
+        <div class="box">
+            <br>內距（padding）是藍色區域和文字之間的距離
+            <br>邊框（border）是藍色線
+            <br>外距（margin）是盒子和其他元素的距離
+        </div>
+
+        <div class="box fixed-box">
+            <br>內距（padding）是藍色區域和文字之間的距離
+            <br>邊框（border）是藍色線
+            <br>外距（margin）是盒子和其他元素的距離
+        </div>
+
+
+
+
+        <h1>CSS position 範例總整理</h1>
+
+        <section>
+            <h2>1. static（預設）</h2>
+            <div class="example-box" style="position: static;  top: 20px; left: 20px;">這是 static 元素，按正常文流排列</div>
+        </section>
+
+        <section>
+            <h2>2. relative（自己偏移）</h2>
+            <div class="example-box" style="position: relative; top: 20px; left: 20px;">
+                這是 relative 元素，往右下偏移
+            </div>
+        </section>
+
+        <section>
+            <h2>3. absolute（相對最近的定位父層）</h2>
+            <div class="relative-parent">
+                父層元素（relative）
+                <div class="absolute-child">
+                    <p>top: 0; right: 0; 我在往外找到最近的 relative 右上角</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. fixed（固定視窗位置）</h2>
+            <div class="fixed-box">
+                <p>bottom: 20px; right: 20px; 📌 即使滾動頁面, 我也永遠固定在畫面右下角</p>
+
+            </div>
+        </section>
+
+        <div class="absolute-child">
+            <p>top: 0; right: 0; 我找不到任何 relative 的元素</p>
+            <p>
+                所以找到最外層 body 的右上角
+            </p>
+        </div>
+
+        <h1>🎯 Flexbox Playground</h1>
+
+        <div class="controls">
+            <div>
+                <label for="direction">flex-direction</label>
+                <select id="direction">
+                    <option>row</option>
+                    <option>row-reverse</option>
+                    <option>column</option>
+                    <option>column-reverse</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="justify">justify-content</label>
+                <select id="justify">
+                    <option>flex-start</option>
+                    <option>center</option>
+                    <option>flex-end</option>
+                    <option>space-between</option>
+                    <option>space-around</option>
+                    <option>space-evenly</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="align">align-items</label>
+                <select id="align">
+                    <option>flex-start</option>
+                    <option>center</option>
+                    <option>flex-end</option>
+                    <option>stretch</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="container" id="flexContainer">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
