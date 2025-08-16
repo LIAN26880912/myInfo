@@ -1,172 +1,174 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
-
+<!-- 加上 'dark' class 來啟用暗黑模式 -->
+<html lang="zh-Hant" class="">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>活動報名表單</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src = "script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你的名字 - 個人網站</title>
+    
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 引入 Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 引入 Font Awesome 圖示庫 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+        /* 桌面版下拉選單：使用 hover 觸發 */
+        .desktop-nav .group:hover .group-hover\:block {
+            display: block;
+        }
+        .desktop-nav .dropdown-menu {
+            display: none;
+        }
+    </style>
+    
+    <script>
+        // Tailwind CSS 暗黑模式設定
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
 </head>
+<body class="bg-slate-50 dark:bg-gray-900 text-slate-800 dark:text-slate-200 transition-colors duration-300">
 
-<body>
-    <header>
-        <h1>2025 夏日市集活動報名</h1>
-    </header>
+    <!-- Header 頁首 -->
+    <header class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto max-w-5xl p-4 flex justify-between items-center">
+            <!-- 左側 Logo/名稱 -->
+            <a href="#" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">你的名字</a>
 
-
-    <a href="https://www.w3schools.com/tags/tag_doctype.asp" target="_blank ">
-        <img src="https://hips.hearstapps.com/hmg-prod/images/mv5bztnmoge1zmqtyjzmyy00mdhklthkzjytnzkyzdyxnta5zte0xkeyxkfqcgdeqxvynjg2njqwmdqat-v1-sy739-cr0-0-1776-739-al-1557325382.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*"
-            height="150" alt="活動圖片" />
-    </a>
-
-    <main>
-        <form id="signupForm">
-            <label for="name">姓名：</label>
-            <input type="text" id="name" name="name" required />
-
-            <label for="email">電子郵件：</label>
-            <input type="email" id="email" name="email" required />
-
-            <label for="password">密碼：</label>
-            <input type="password" id="password" name="password" required />
-
-            <label for="phone">電話：</label>
-            <input type="tel" id="phone" name="phone" required />
-
-            <label for="message">備註：</label>
-            <textarea id="message" name="message"></textarea>
-
-            <button type="submit">送出報名</button>
-        </form>
-
-        <div id="successMessage" class="hidden">✅ 感謝您的報名！</div>
-
-        <form>
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-            <label for="vehicle1"> I have a bike</label><br>
-            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-            <label for="vehicle2"> I have a car</label><br>
-            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" checked>
-            <label for="vehicle3"> I have a boat</label>
-        </form>
-
-
-        <p>Hello CSS!</p>
-        <p style="color: red">Hello CSS!</p>
-        <p class="highlight">Hello CSS!</p>
-        <div class="highlight highlight-div">Hello CSS!</div>
-
-        <div class="highlight highlight-div">
-            <p>行內元素</p>
-            <p>行內元素</p>
-            <p>行內元素</p>
-        </div>
-
-        <hr />
-
-        <p id="myText" class="highlight">Hello CSS!</p>
-
-
-        <h1>CSS Box Model 範例</h1>
-
-        <div class="box">
-            <br>內距（padding）是藍色區域和文字之間的距離
-            <br>邊框（border）是藍色線
-            <br>外距（margin）是盒子和其他元素的距離
-        </div>
-
-        <div class="box fixed-box">
-            <br>內距（padding）是藍色區域和文字之間的距離
-            <br>邊框（border）是藍色線
-            <br>外距（margin）是盒子和其他元素的距離
-        </div>
-
-
-
-
-        <h1>CSS position 範例總整理</h1>
-
-        <section>
-            <h2>1. static（預設）</h2>
-            <div class="example-box" style="position: static;  top: 20px; left: 20px;">這是 static 元素，按正常文流排列</div>
-        </section>
-
-        <section>
-            <h2>2. relative（自己偏移）</h2>
-            <div class="example-box" style="position: relative; top: 20px; left: 20px;">
-                這是 relative 元素，往右下偏移
-            </div>
-        </section>
-
-        <section>
-            <h2>3. absolute（相對最近的定位父層）</h2>
-            <div class="relative-parent">
-                父層元素（relative）
-                <div class="absolute-child">
-                    <p>top: 0; right: 0; 我在往外找到最近的 relative 右上角</p>
+            <!-- 中間導覽列 (桌面版) -->
+            <div class="hidden md:flex items-center space-x-6 desktop-nav">
+                <a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">關於我</a>
+                <!-- Side Projects 下拉選單 -->
+                <div class="relative group">
+                    <button class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center">
+                        Side Projects
+                        <i class="fas fa-chevron-down text-xs ml-2"></i>
+                    </button>
+                    <div class="dropdown-menu absolute hidden group-hover:block bg-white dark:bg-gray-700 shadow-lg rounded-md mt-2 py-2 w-48">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-slate-100 dark:hover:bg-gray-600">專案一：智慧醫療導航</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-slate-100 dark:hover:bg-gray-600">專案二：待辦事項 App</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-slate-100 dark:hover:bg-gray-600">專案三：個人部落格</a>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <section>
-            <h2>4. fixed（固定視窗位置）</h2>
-            <div class="fixed-box">
-                <p>bottom: 20px; right: 20px; 📌 即使滾動頁面, 我也永遠固定在畫面右下角</p>
-
+            <!-- 右側：暗黑模式切換 & 手機版漢堡選單按鈕 -->
+            <div class="flex items-center">
+                <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-sun"></i> 
+                </button>
+                <!-- 漢堡選單按鈕 (手機版顯示) -->
+                <button id="hamburger-btn" class="md:hidden ml-2 w-10 h-10 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-        </section>
-
-        <div class="absolute-child">
-            <p>top: 0; right: 0; 我找不到任何 relative 的元素</p>
-            <p>
-                所以找到最外層 body 的右上角
-            </p>
-        </div>
-
-        <h1>🎯 Flexbox Playground</h1>
-
-        <div class="controls">
+        </nav>
+        
+        <!-- 手機版下拉選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-slate-100 dark:hover:bg-gray-700">關於我</a>
             <div>
-                <label for="direction">flex-direction</label>
-                <select id="direction">
-                    <option>row</option>
-                    <option>row-reverse</option>
-                    <option>column</option>
-                    <option>column-reverse</option>
-                </select>
-            </div>
-
-            <div>
-                <label for="justify">justify-content</label>
-                <select id="justify">
-                    <option>flex-start</option>
-                    <option>center</option>
-                    <option>flex-end</option>
-                    <option>space-between</option>
-                    <option>space-around</option>
-                    <option>space-evenly</option>
-                </select>
-            </div>
-
-            <div>
-                <label for="align">align-items</label>
-                <select id="align">
-                    <option>flex-start</option>
-                    <option>center</option>
-                    <option>flex-end</option>
-                    <option>stretch</option>
-                </select>
+                <button id="mobile-projects-toggle" class="w-full flex justify-between items-center py-2 px-4 text-sm hover:bg-slate-100 dark:hover:bg-gray-700">
+                    <span>Side Projects</span>
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div id="mobile-projects-dropdown" class="hidden pl-4">
+                    <a href="#" class="block py-2 px-4 text-xs text-gray-600 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-gray-700">專案一：智慧醫療導航</a>
+                    <a href="#" class="block py-2 px-4 text-xs text-gray-600 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-gray-700">專案二：待辦事項 App</a>
+                    <a href="#" class="block py-2 px-4 text-xs text-gray-600 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-gray-700">專案三：個人部落格</a>
+                </div>
             </div>
         </div>
+    </header>
 
-        <div class="container" id="flexContainer">
-            <div class="box">1</div>
-            <div class="box">2</div>
-            <div class="box">3</div>
+    <!-- 主容器 -->
+    <div class="container mx-auto max-w-4xl p-6 md:p-12">
+        <main>
+            <section id="about" class="flex flex-col md:flex-row items-center my-12">
+                <img 
+                    src="https://placehold.co/128x128/E2E8F0/475569?text=Me" 
+                    alt="個人大頭貼" 
+                    class="w-32 h-32 rounded-full mb-6 md:mb-0 md:mr-8 border-4 border-white dark:border-gray-700 shadow-lg"
+                    onerror="this.onerror=null; this.src='https://placehold.co/128x128/E2E8F0/475569?text=Image+Error';"
+                >
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl font-bold text-slate-900 dark:text-white">你的名字</h1>
+                    <p class="text-lg text-indigo-500 dark:text-indigo-400 mt-2">一句話介紹自己，例如：前端工程師 | UI/UX 設計愛好者</p>
+                    <p class="mt-4 text-slate-700 dark:text-slate-300 max-w-xl">
+                        這是一段關於你的簡短介紹。你可以說明你的專業領域、興趣，或是任何你想讓別人認識你的事情。試著讓它簡潔而真誠。這是一個全新的版面，加入了頁首、頁尾以及暗黑模式功能。
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer 頁尾 -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-slate-200 dark:border-gray-700 mt-16">
+        <div class="container mx-auto max-w-5xl p-6 text-center text-slate-500 dark:text-slate-400">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" target="_blank" class="hover:text-slate-900 dark:hover:text-white transition-colors duration-300"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" target="_blank" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-300"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="#" target="_blank" class="hover:text-black dark:hover:text-white transition-colors duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="mailto:your.email@example.com" class="hover:text-red-500 dark:hover:text-red-400 transition-colors duration-300"><i class="fas fa-envelope fa-lg"></i></a>
+            </div>
+            <p>&copy; 2024 你的名字. All Rights Reserved.</p>
         </div>
-    </main>
-    <script src="script.js"></script>
+    </footer>
+
+    <script>
+        // --- 暗黑模式切換邏輯 ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const sunIcon = '<i class="fas fa-sun"></i>';
+        const moonIcon = '<i class="fas fa-moon"></i>';
+
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggleBtn.innerHTML = moonIcon;
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeToggleBtn.innerHTML = sunIcon;
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggleBtn.innerHTML = moonIcon;
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggleBtn.innerHTML = sunIcon;
+            }
+        });
+
+        // --- 手機版選單邏輯 ---
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileProjectsToggle = document.getElementById('mobile-projects-toggle');
+        const mobileProjectsDropdown = document.getElementById('mobile-projects-dropdown');
+
+        // 漢堡選單主開關
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Side Projects 子選單開關
+        mobileProjectsToggle.addEventListener('click', () => {
+            mobileProjectsDropdown.classList.toggle('hidden');
+            // 切換箭頭方向
+            const icon = mobileProjectsToggle.querySelector('i');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        });
+    </script>
 </body>
-
 </html>
